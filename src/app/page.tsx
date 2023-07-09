@@ -9,6 +9,7 @@ import Navbar from "@/layouts/Navbar";
 import About from "./views/About";
 import Projects from "./views/Projects";
 import Contact from "./views/Contact";
+import Home from "./views/Home";
 
 const applyThemeClass = (theme: string) => {
   const main: HTMLElement | null = document.querySelector("main");
@@ -22,7 +23,7 @@ const applyThemeClass = (theme: string) => {
     }
   }
 };
-export default function Home() {
+export default function Page() {
   const [loading, setLoading] = useState(true);
   // THEME CONFIGURATION
   const defaultTheme =
@@ -42,25 +43,26 @@ export default function Home() {
 
   useEffect(() => {
     const savedTheme = getFromLS("theme");
-    if (savedTheme) {
-      setTheme(savedTheme);
-      setLoading(false);
-    }
+    if (savedTheme) setTheme(savedTheme);
+    setLoading(false);
   }, []);
 
   // VIEW CONFIGURATION
   const [view, setView] = useState(views.HOME);
   const toggleView = (view: allViews) => setView(views[view]);
 
+  let Component = <Home />;
+  if (view.name === views["HOME"].name) Component = <Home />;
+  else if (view.name === views["ABOUT"].name) Component = <About />;
+  else if (view.name === views["PROJECTS"].name) Component = <Projects />;
+  else if (view.name === views["CONTACT"].name) Component = <Contact />;
+
   if (loading) return <Loading />;
   else
     return (
       <main className={"main bg " + theme}>
-        <Header view={view.name} />
-        {view.name === views["HOME"].name && <Home />}
-        {view.name === views["ABOUT"].name && <About />}
-        {view.name === views["PROJECTS"].name && <Projects />}
-        {view.name === views["CONTACT"].name && <Contact />}
+        <Header view={view.name} toggleView={toggleView} />
+        {Component}
         <Navbar
           toggleTheme={toggleTheme}
           theme={theme}

@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway&family=Roboto+Condensed:wght@300;400;700&display=swap");
+
 /* CSS RESET - Alvin Varghese */
 /* https://github.com/alvin1904 */
 
@@ -92,86 +94,110 @@ textarea {
 }
 
 :root {
-    --dark-color: #252525;
-    --light-color: #e2e2e2;
-    --accent-color: #ff8a00;
-    --fs-800: "70px";
-    --fs-700: "40px";
-    --fs-600: "35px";
-    --fs-500: "30px";
-    --fs-400: "23px";
-    --fs-300: "17px";
-    --fs-200: "15px";
-  }
-  .f23 {
-    font-size: var(--fs-400);
-  }
-  .light {
-    --bgcolor: var(--light-color);
-    --color: var(--dark-color);
-  }
-  .dark {
-    --bgcolor: var(--dark-color);
-    --color: var(--light-color);
-  }
-  .bg {
-    background-color: var(--bgcolor);
-    color: var(--color);
-  }
-  .bg-inverse {
-    background-color: var(--color);
-    color: var(--bgcolor);
-  }
-  .clr {
-    color: var(--color);
-  }
-  .clr-inverse {
-    color: var(--bgcolor);
-  }
-  .main {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    overflow-x: hidden;
-    padding-bottom: 100px;
-  }
-  
-  /* NAVBAR */
-  .nav {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 65px;
-    z-index: 100;
-    border-radius: 1.25rem 1.25rem 0rem 0rem;
-    display: grid;
-    justify-content: center;
-    align-content: center;
-  }
-  .nav-icons {
-    width: 100%;
-    display: flex;
+  font-family: "Raleway", sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
+  --dark-color: #252525;
+  --light-color: #e2e2e2;
+  --accent-color: #ff8a00;
+  --fs-800: 70px;
+  --fs-700: 40px;
+  --fs-600: 35px;
+  --fs-500: 30px;
+  --fs-400: 23px;
+  --fs-300: 17px;
+  --fs-200: 15px;
+  --nav-height: 70px;
+  --header-height: 35px;
+}
+.f23 {
+  font-size: var(--fs-400);
+}
+.light {
+  --bgcolor: var(--light-color);
+  --color: var(--dark-color);
+}
+.dark {
+  --bgcolor: var(--dark-color);
+  --color: var(--light-color);
+}
+.bg {
+  background-color: var(--bgcolor);
+  color: var(--color);
+}
+.bg-inverse {
+  background-color: var(--color);
+  color: var(--bgcolor);
+}
+.clr {
+  color: var(--color);
+}
+.clr-inverse {
+  color: var(--bgcolor);
+}
+.main {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  padding-bottom: var(--nav-height);
+}
+
+/* NAVBAR */
+.nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: var(--nav-height);
+  z-index: 100;
+  border-radius: 1.25rem 1.25rem 0rem 0rem;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+.nav-icons {
+  width: 100%;
+  display: flex;
+}
+.nav-icons span {
+  text-align: center;
+  font-size: 2rem;
+  padding: 0 1rem;
+  transform: translateY(5px);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+@media (min-width: 768px) {
+  .themeChange {
+    position: absolute;
+    right: 20px;
   }
   .nav-icons span {
-    text-align: center;
-    font-size: 2rem;
-    padding: 0 1rem;
-    transform: translateY(5px);
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
+    opacity: 0.75;
   }
-  @media (min-width: 768px) {
-    .themeChange {
-      position: absolute;
-      right: 20px;
-    }
-    .nav-icons span{
-      opacity: 0.75;
-    }
-    .nav-icons span:hover {
-      opacity: 1;
-    }
+  .nav-icons span:hover {
+    opacity: 1;
   }
-  
-
+}
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  height: var(--header-height);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  padding-left: 10px;
+  user-select: none;
+}
+.header span{
+  cursor: pointer;
+  text-decoration: underline;
+}
+.view {
+  padding-top: var(--header-height);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
