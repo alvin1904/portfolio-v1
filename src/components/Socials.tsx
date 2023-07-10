@@ -9,9 +9,21 @@ export default function Socials() {
   };
   return (
     <div className={styles.socials}>
-      <IonIcon icon={logoGithub} onClick={() => openLink(githubLink)} />
-      <IonIcon icon={logoLinkedin} onClick={() => openLink(linkedinLink)} />
-      <IonIcon icon={logoInstagram} onClick={() => openLink(instaLink)} />
+      <IonIcon
+        icon={logoGithub}
+        onClick={() => openLink(githubLink)}
+        aria-label="Github"
+      />
+      <IonIcon
+        icon={logoLinkedin}
+        onClick={() => openLink(linkedinLink)}
+        aria-label="Linkedin"
+      />
+      <IonIcon
+        icon={logoInstagram}
+        onClick={() => openLink(instaLink)}
+        aria-label="Instagram"
+      />
     </div>
   );
 }

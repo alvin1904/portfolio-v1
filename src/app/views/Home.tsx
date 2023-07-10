@@ -13,6 +13,7 @@ export default function Home() {
           height={650}
           width={615}
           alt="Alvin Varghese"
+          loading="eager"
         />
         <Intro />
       </div>

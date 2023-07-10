@@ -10,6 +10,7 @@ import About from "./views/About";
 import Projects from "./views/Projects";
 import Contact from "./views/Contact";
 import Home from "./views/Home";
+import { RalewayFont, RobotoFont } from "@/utils/fonts";
 
 const applyThemeClass = (theme: string) => {
   const main: HTMLElement | null = document.querySelector("main");
@@ -61,6 +62,12 @@ export default function Page() {
   else
     return (
       <main className={"main bg " + theme}>
+        <style jsx global>{`
+          html {
+            font-family: ${RalewayFont.style.fontFamily};
+            font-family: ${RobotoFont.style.fontFamily};
+          }
+        `}</style>
         <Header view={view.name} toggleView={toggleView} />
         {Component}
         <Navbar

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { allViews, views } from "@/data/navbarLinks";
 import { IonIcon } from "@ionic/react";
@@ -28,12 +28,15 @@ export default function Navbar({ toggleTheme, theme, toggleView }: Props) {
                 changeView(view);
               }}
             >
-              <IonIcon icon={viewDetails.icon} />
+              <IonIcon icon={viewDetails.icon} aria-label={viewDetails.name} />
             </span>
           );
         })}
         <span className="themeChange clr-inverse" onClick={toggleTheme}>
-          <IonIcon icon={theme === "light" ? sunnyOutline : moonOutline} />
+          <IonIcon
+            icon={theme === "light" ? sunnyOutline : moonOutline}
+            aria-label="Theme change"
+          />
         </span>
       </div>
     </nav>
