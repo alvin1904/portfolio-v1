@@ -1,13 +1,15 @@
 import { NextRequest, NextResponse } from "next/server";
-import { projects } from "../../data";
+import { projects } from "../data";
 
-export async function GET(request: NextRequest) {
+export function GET(request: NextRequest) {
   try {
+    const list = projects.map((project) => project.name);
     return NextResponse.json({
       status: 200,
-      data: projects,
+      data: list,
     });
   } catch (error: any) {
-    return NextResponse.json({ error: error?.message, status: 400 });
+    console.error(error)
+    return NextResponse.json({ error: "Something went wrong!", status: 400 });
   }
 }

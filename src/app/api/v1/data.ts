@@ -11,7 +11,7 @@ export type ProjectType = {
 
 export type ProjectsType = ProjectType[];
 
-export const projects = [
+export const projects: ProjectsType = [
   {
     id: 1,
     name: "Password Generator",

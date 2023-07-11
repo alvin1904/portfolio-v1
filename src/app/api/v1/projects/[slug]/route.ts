@@ -1,12 +1,12 @@
 import { projects } from "../../data";
 import { NextRequest, NextResponse } from "next/server";
 
-export async function GET(request: NextRequest) {
+export function GET(request: NextRequest, context: {params: {slug: string}}) {
+  const { slug } = context.params;
   try {
-    const id = request.nextUrl.searchParams.get("id");
-    if (typeof id === "string") {
-      const newId = parseInt(id);
-      const project = projects.find((project) => project.id === newId);
+    if (typeof slug === "string") {
+      const id = parseInt(slug);
+      const project = projects.find((project) => project.id === id);
       if (typeof project === "object")
         return NextResponse.json({
           data: project,
@@ -15,7 +15,7 @@ export async function GET(request: NextRequest) {
     }
     return NextResponse.json({ error: "Project is missing!", status: 400 });
   } catch (err) {
-    console.log(err);
+    console.error(err);
     return NextResponse.json({ error: "Something went wrong!", status: 400 });
   }
 }
