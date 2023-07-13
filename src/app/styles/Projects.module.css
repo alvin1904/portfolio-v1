@@ -1,0 +1,105 @@
+.project_section {
+  position: relative;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 1fr 4fr;
+  gap: 3rem;
+  height: 75vh;
+  width: 90%;
+}
+.projectsList {
+  height: 75vh;
+  width: 350px;
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-rows: auto 1fr;
+  gap: 10px;
+  border: 1px solid var(--color);
+  border-radius: 0.5rem;
+}
+.projectsList div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  height: min(100%, 70vh);
+  overflow-y: scroll;
+}
+.projectsList h1 {
+  padding-left: 0.5rem;
+  font-size: 1.5rem;
+}
+.projectsList p {
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+}
+.projectDetails {
+  width: 100%;
+  border-radius: 0.5rem;
+}
+@media (max-width: 768px) {
+  .project_section {
+    grid-auto-flow: row;
+    grid-template-columns: none;
+    grid-template-rows: 1fr 4fr;
+    gap: 1rem;
+  }
+  .projectsList {
+    gap: 0;
+    height: 100%;
+    width: 100%;
+  }
+  .projectsList div {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: none;
+    grid-template-columns: 1fr 4fr;
+    overflow-y: scroll;
+    padding: 1rem 0rem;
+    gap: 0;
+  }
+  .projectsList div p {
+    width: 200px;
+    font-size: 1.15rem;
+    height: 100%;
+    border-right: 1px solid var(--color);
+    padding: 5px 0px;
+  }
+  .projectDetails{
+    width: 350px;
+  }
+}
+.projectsList div::-webkit-scrollbar {
+  width: 0.25rem;
+  height: 0.25rem;
+}
+.projectsList div::-webkit-scrollbar-thumb {
+  width: 0.25rem;
+  height: 0.25rem;
+  border-radius: 0.25rem;
+  background-color: var(--color);
+}
+.projectsList div::-webkit-scrollbar-track {
+  width: 0.25rem;
+  height: 0.25rem;
+  background-color: var(--bgcolor);
+}
+
+.projectsList div p:hover {
+  background-color: var(--color);
+  color: var(--bgcolor);
+  cursor: pointer;
+}
+
+/* PROJECT DETAILS */
+
+@media screen and (max-width: 768px) {
+  .details {
+    font-family: "Raleway", sans-serif;
+    height: 100%;
+    width: 100%;
+  }
+}

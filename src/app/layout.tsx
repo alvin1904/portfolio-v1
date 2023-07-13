@@ -1,3 +1,4 @@
+import Head from "next/head";
 import "./styles/globals.css";
 import type { Metadata } from "next";
 
@@ -13,6 +14,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <Head>
+        <title>Alvin Varghese</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <body>{children}</body>
     </html>
   );

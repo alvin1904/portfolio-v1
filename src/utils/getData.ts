@@ -11,8 +11,3 @@ export const getData = async (link: string): Promise<any> => {
     return err;
   }
 };
-
-export const getProject = async (id: number): Promise<ProjectType> => {
-  const data = await getData(`/api/v1/projects/${id}`);
-  return data || {};
-};
