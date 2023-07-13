@@ -1,5 +1,12 @@
-export default function Projects() {
+type ProjectProps = {
+  projects: string[] | null;
+};
+
+export default function Projects({ projects }: ProjectProps) {
   return (
-    <div>Projects</div>
-  )
+    <div className="view bg">
+      <div>Projects</div>
+      <div>`{projects}`</div>
+    </div>
+  );
 }

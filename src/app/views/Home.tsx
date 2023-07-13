@@ -8,7 +8,7 @@ export default function Home() {
       <div className={styles.home_components}>
         <Image
           priority
-          className={styles.dp}
+          className={styles.dp + " bg-inverse"}
           src="/pic.webp"
           height={650}
           width={615}

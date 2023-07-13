@@ -11,6 +11,7 @@ import Projects from "./views/Projects";
 import Contact from "./views/Contact";
 import Home from "./views/Home";
 import { RalewayFont, RobotoFont } from "@/utils/fonts";
+import { getData } from "@/utils/getData";
 
 const applyThemeClass = (theme: string) => {
   const main: HTMLElement | null = document.querySelector("main");
@@ -25,6 +26,17 @@ const applyThemeClass = (theme: string) => {
   }
 };
 export default function Page() {
+  // FETCHING PROJECTS LIST
+  const [projects, setProjects] = useState<string[] | null>(null);
+  useEffect(() => {
+    const getProjects = async () => {
+      const data = await getData("/api/v1/projects");
+      console.log(data);
+      setProjects(data?.data || []);
+    };
+    if (!projects) getProjects();
+  });
+
   const [loading, setLoading] = useState(true);
   // THEME CONFIGURATION
   const defaultTheme =
@@ -51,11 +63,11 @@ export default function Page() {
   // VIEW CONFIGURATION
   const [view, setView] = useState(views.HOME);
   const toggleView = (view: allViews) => setView(views[view]);
-
   let Component = <Home />;
   if (view.name === views["HOME"].name) Component = <Home />;
   else if (view.name === views["ABOUT"].name) Component = <About />;
-  else if (view.name === views["PROJECTS"].name) Component = <Projects />;
+  else if (view.name === views["PROJECTS"].name)
+    Component = <Projects projects={projects} />;
   else if (view.name === views["CONTACT"].name) Component = <Contact />;
 
   if (loading) return <Loading />;
