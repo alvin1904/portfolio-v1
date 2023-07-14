@@ -13,7 +13,7 @@ export type ProjectsType = ProjectType[];
 
 export const projects: ProjectsType = [
   {
-    id: 1,
+    id: 0,
     name: "Password Generator",
     stack: ["Svelte", "CSS"],
     description:
@@ -27,7 +27,7 @@ export const projects: ProjectsType = [
     productionLink: "https://alvins-password-generator.netlify.app/",
   },
   {
-    id: 2,
+    id: 1,
     name: "Advice Generator",
     stack: ["React Js.", "CSS"],
     description:

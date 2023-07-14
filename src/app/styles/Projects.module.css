@@ -1,0 +1,141 @@
+.project_section {
+  position: relative;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 1fr 4fr;
+  gap: 3rem;
+  height: 75vh;
+  width: 90%;
+}
+.projectsList {
+  height: 100%;
+  width: 350px;
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-rows: auto 1fr;
+  gap: 10px;
+  border: 1px solid var(--color);
+  border-radius: 0.5rem;
+  padding-top: 5px;
+}
+.projectsList div {
+  font-family: "Raleway", sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  height: min(100%, 70vh);
+  overflow-y: scroll;
+}
+.projectsList h1 {
+  padding-left: 0.5rem;
+  font-size: 1.5rem;
+}
+.projectsList p {
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  text-align: left;
+  padding: 5px 30px;
+  transition: all 50ms ease;
+}
+
+@media (max-width: 768px) {
+  .project_section {
+    grid-auto-flow: row;
+    grid-template-columns: none;
+    grid-template-rows: 1fr 5fr;
+    gap: 2rem;
+  }
+  .projectsList {
+    gap: 0;
+    height: 100%;
+    width: 100%;
+    overflow-y: hidden;
+  }
+  .projectsList div {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: none;
+    grid-template-columns: 1fr 4fr;
+    overflow-x: scroll;
+    padding: 0px;
+    gap: 0;
+  }
+  .projectsList div p {
+    width: 200px;
+    font-size: 1.15rem;
+    height: 100%;
+    border-right: 1px solid var(--color);
+    padding: 0px;
+    justify-content: center;
+    text-align: center;
+  }
+}
+.projectDetails::-webkit-scrollbar,
+.projectsList div::-webkit-scrollbar {
+  width: 0rem;
+  height: 0.05rem;
+  background-color: transparent;
+}
+.projectsList div p:hover,
+.active {
+  background-color: var(--color);
+  color: var(--bgcolor);
+  cursor: pointer;
+}
+
+/* PROJECT DETAILS */
+.projectDetails {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem;
+  overflow-y: scroll;
+}
+.details {
+  height: 100%;
+  width: 100%;
+}
+.projectDetails {
+  width: 100%;
+  height: 100%;
+}
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 15px;
+  gap: 0.25rem;
+}
+.body > * {
+  width: 100%;
+}
+.photo {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+}
+.body h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+}
+.body .date {
+  font-size: 0.85rem;
+  line-height: 0.85rem;
+}
+.body .text {
+  font-size: 1rem;
+  line-height: 1.15rem;
+  margin: 10px 0;
+}
+@media (min-width: 768px) {
+  .body h1 {
+    font-size: 2.25rem;
+    line-height: 2.25rem;
+  }
+  .body .stack {
+    margin-top: 10px;
+  }
+}
