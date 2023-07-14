@@ -72,6 +72,9 @@
   .form {
     align-items: center;
   }
+  .form .heading2{
+    margin-bottom: 1rem;
+  }
   .form input {
     width: 55%;
   }

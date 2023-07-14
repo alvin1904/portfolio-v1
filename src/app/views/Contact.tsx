@@ -1,11 +1,14 @@
 import Socials from "@/components/Socials";
 import styles from "../styles/Contact.module.css";
+import emailjs from "@emailjs/browser";
+import { useState } from "react";
 
 export type MessageFormat = {
   name: FormDataEntryValue | string | null;
   email: FormDataEntryValue | string | null;
   subject: FormDataEntryValue | string | null;
   message: FormDataEntryValue | string | null;
+  reply_to: FormDataEntryValue | string | null;
 };
 
 const ContactHeading = () => (
@@ -26,16 +29,34 @@ const ContactLayout = ({ children }: { children: React.ReactNode }) => (
 );
 
 export default function Contact() {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const [status, setStatus] = useState<string>("Send Message");
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const data = new FormData(e.target as HTMLFormElement);
+    const form = e.target as HTMLFormElement;
+    const data = new FormData(form);
     const temp: MessageFormat = {
       name: data.get("name"),
       email: data.get("email"),
+      reply_to: data.get("email"),
       subject: data.get("subject"),
       message: data.get("message"),
     };
-    console.log(temp);
+    try {
+      setStatus("Sending...");
+      const res = await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "",
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "",
+        temp,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+      );
+      if (res.status == 200) setStatus("Message sent!");
+    } catch (err) {
+      setStatus("Failed to send!");
+    } finally {
+      const timer = setTimeout(() => setStatus("Send Message"), 3000);
+      form.reset();
+      return () => clearTimeout(timer);
+    }
   };
   return (
     <div className="view bg">
@@ -64,7 +85,7 @@ export default function Contact() {
               required
             ></textarea>
             <button type="submit" className={styles.submit}>
-              Send Message
+              {status}
             </button>
           </form>
         </div>
