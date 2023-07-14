@@ -3,6 +3,7 @@ import { useState } from "react";
 import { ProjectType } from "../api/v1/data";
 import { getData } from "@/utils/getData";
 import ProjectDetail from "@/components/projects/ProjectDetail";
+import { trimString } from "@/utils/trimString";
 
 type ProjectProps = {
   projects: string[] | null;
@@ -39,13 +40,13 @@ export default function Projects({ projects }: ProjectProps) {
                       loadProject(index);
                     }}
                   >
-                    {project}
+                    {trimString(project)}
                   </p>
                 );
               })}
           </div>
         </div>
-        <div className={styles.projectDetails + " bg-inverse"}>
+        <div className={styles.projectDetails + " bg"}>
           <ProjectDetail project={project} />
         </div>
       </section>

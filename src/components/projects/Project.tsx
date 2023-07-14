@@ -7,6 +7,18 @@ type ProjectProps = {
   data: ProjectType;
 };
 
+const Goto = ({
+  children,
+  link,
+}: {
+  children: React.ReactNode;
+  link: string;
+}) => (
+  <a href={link} target="_blank" rel="noopener noreferrer">
+    {children}
+  </a>
+);
+
 export default function Project({ data }: ProjectProps) {
   const links: string[] = data.images;
   return (
@@ -32,6 +44,10 @@ export default function Project({ data }: ProjectProps) {
           />
         );
       })}
+      <div className={styles.links}>
+        Check out: <Goto link={data.githubLink}>Github</Goto> or{" "}
+        <Goto link={data.productionLink}>Live link</Goto>
+      </div>
     </div>
   );
 }
