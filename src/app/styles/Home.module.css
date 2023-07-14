@@ -48,6 +48,10 @@
   gap: 0.9rem;
   cursor: pointer;
 }
+.socials *:hover {
+  transition: all 0.3s ease;
+  opacity: 0.75;
+}
 
 @media screen and (max-width: 767px) {
   .intro_box {

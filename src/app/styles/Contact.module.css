@@ -1,0 +1,82 @@
+.contact {
+  height: 100%;
+  width: 80%;
+}
+.heading {
+  font-size: 1.75rem;
+  line-height: 1.75rem;
+  text-align: center;
+  margin: 2rem 0;
+}
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.item .heading2 {
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+}
+.item p {
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.4rem;
+}
+.form {
+  margin: 3rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.form textarea,
+.form input {
+  resize: none;
+  background-color: transparent;
+  color: var(--color);
+  border: 1px solid var(--color);
+  padding: 10px;
+  border-radius: 5px;
+}
+.form textarea::placeholder,
+.form input::placeholder {
+  opacity: 0.5;
+}
+.form textarea {
+  height: 150px;
+}
+.submit {
+  all: unset;
+  cursor: pointer;
+  padding: 8px 40px;
+  border-radius: 5px;
+  background-color: var(--color);
+  color: var(--bgcolor);
+  border: 1px solid transparent;
+  width: fit-content;
+  font-size: 1.15rem;
+  transition: all 0.3s ease;
+}
+.submit:hover {
+  background-color: transparent;
+  color: var(--color);
+  border: 1px solid var(--color);
+}
+@media (min-width: 1024px) {
+  .contact {
+    width: 75%;
+  }
+  .item:nth-of-type(1) {
+    align-items: center;
+    flex-direction: column;
+  }
+  .form {
+    align-items: center;
+  }
+  .form input {
+    width: 55%;
+  }
+  .form textarea {
+    width: 55%;
+    height: 220px;
+  }
+}
