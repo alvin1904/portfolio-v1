@@ -19,9 +19,8 @@
     width: 284px;
   }
   .home_components {
-    margin-top: 10px;
     flex-direction: column;
-    gap: 1rem;
+    gap: 3rem;
   }
 }
 
