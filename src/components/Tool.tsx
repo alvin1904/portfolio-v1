@@ -5,6 +5,7 @@ export const Tool = ({ children }: { children: React.ReactNode }) => (
     className="tools"
     style={{
       backgroundColor: `var(--accent-color)`,
+      color: `var(--color)`,
       padding: `1px 8px`,
       borderRadius: `3px`,
       margin: `0 3px`,

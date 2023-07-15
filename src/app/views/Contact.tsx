@@ -2,6 +2,7 @@ import Socials from "@/components/Socials";
 import styles from "../styles/Contact.module.css";
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
+import Loader from "@/components/Loader";
 
 export type MessageFormat = {
   name: FormDataEntryValue | string | null;
@@ -42,7 +43,7 @@ export default function Contact() {
       message: data.get("message"),
     };
     try {
-      setStatus("Sending...");
+      setStatus("loading");
       const res = await emailjs.send(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "",
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "",
@@ -84,8 +85,8 @@ export default function Contact() {
               placeholder="Your message"
               required
             ></textarea>
-            <button type="submit" className={styles.submit}>
-              {status}
+            <button type="submit" className={styles.submit + " bg"}>
+              {status == "loading" ? <Loader /> : status}
             </button>
           </form>
         </div>

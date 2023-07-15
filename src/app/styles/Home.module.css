@@ -5,7 +5,6 @@
   align-items: center;
   gap: 5rem;
   height: calc(100vh - 150px);
-  user-select: none;
 }
 .dp {
   height: 450px;

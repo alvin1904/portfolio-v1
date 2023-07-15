@@ -61,6 +61,12 @@
   color: var(--color);
   border: 1px solid var(--color);
 }
+.submit span {
+  border-color: var(--bgcolor);
+}
+.submit:hover span {
+  border-color: var(--color);
+}
 @media (min-width: 1024px) {
   .contact {
     width: 75%;
@@ -72,7 +78,7 @@
   .form {
     align-items: center;
   }
-  .form .heading2{
+  .form .heading2 {
     margin-bottom: 1rem;
   }
   .form input {

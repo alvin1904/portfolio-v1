@@ -157,6 +157,8 @@
   justify-content: center;
   background-color: var(--bgcolor);
   color: var(--color);
+  font-size: 1.25rem;
+  line-height: 1.25rem;
 }
 .links a {
   color: var(--color-accent);
@@ -166,6 +168,7 @@
 @media (min-width: 768px) {
   .links {
     width: 360px;
+
   }
 }
 

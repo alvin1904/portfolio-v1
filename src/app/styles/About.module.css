@@ -3,7 +3,7 @@
   height: 100%;
   margin: 1rem;
   display: grid;
-  gap: 1.5rem;
+  gap: 3.5rem;
   align-items: center;
   justify-items: center;
 }
@@ -79,7 +79,7 @@
 }
 .grouper {
   display: grid;
-  gap: 2.25rem;
+  gap: 3.5rem;
   align-items: center;
   justify-content: center;
 }
@@ -92,6 +92,9 @@
     justify-content: center;
     margin-bottom: 1rem;
     margin-top: 2rem;
+  }
+  .section{
+    gap: 2rem
   }
   .about .skills {
     display: flex;
