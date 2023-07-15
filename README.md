@@ -4,12 +4,12 @@ Have a look at it: [alvinvarghese.me](https://alvinvarghese.me)
 
 ## Table of Contents
 
-- [ About](#getting_started)
+- [ About](#about)
 - [ Installing](#installing)
 
 ## About
 
-Designed with `Figma`, Developed by `Next Js` in `Typescript`. Uses dependencies `Email Js` to send emails, `Ionic Icons` for icons. Deployed in Vercel.
+Designed with `Figma`, Developed by `Next Js` in `Typescript`. Uses dependencies `Email Js` to send emails, `Ionic Icons` for icons. Deployed in `Vercel`.
 
 ## Installing
 - Clone the repository
