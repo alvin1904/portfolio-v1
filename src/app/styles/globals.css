@@ -113,10 +113,12 @@ textarea {
 .light {
   --bgcolor: var(--light-color);
   --color: var(--dark-color);
+  --nav-color: white
 }
 .dark {
   --bgcolor: var(--dark-color);
   --color: var(--light-color);
+  --nav-color: black
 }
 .bg {
   background-color: var(--bgcolor);
@@ -125,6 +127,10 @@ textarea {
 .bg-inverse {
   background-color: var(--color);
   color: var(--bgcolor);
+}
+.bg-nav{
+  background-color: var(--nav-color);
+  color: var(--color);
 }
 .clr {
   color: var(--color);

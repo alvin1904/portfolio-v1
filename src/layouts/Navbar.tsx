@@ -15,14 +15,14 @@ export default function Navbar({ toggleTheme, theme, toggleView }: Props) {
     toggleView(view);
   };
   return (
-    <nav className="nav bg-inverse">
+    <nav className="nav bg-nav">
       <div className="nav-icons">
         {Object.keys(views).map((i: string, index: number) => {
           let view = i as allViews | "HOME";
           let viewDetails = views[view];
           return (
             <span
-              className="clr-inverse"
+              className="clr"
               key={index}
               onClick={() => {
                 changeView(view);
@@ -32,7 +32,7 @@ export default function Navbar({ toggleTheme, theme, toggleView }: Props) {
             </span>
           );
         })}
-        <span className="themeChange clr-inverse" onClick={toggleTheme}>
+        <span className="themeChange clr" onClick={toggleTheme}>
           <IonIcon
             icon={theme === "light" ? sunnyOutline : moonOutline}
             aria-label="Theme change"
