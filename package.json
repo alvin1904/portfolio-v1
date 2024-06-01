@@ -15,7 +15,7 @@
     "@types/react": "18.2.14",
     "@types/react-dom": "18.2.6",
     "ionicons": "^7.1.2",
-    "next": "13.4.9",
+    "next": "14.1.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "sharp": "^0.32.2",
